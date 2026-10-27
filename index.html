@@ -1,67 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habiba Mohamed | Video Editor</title>
+    <title>Habiba Hisham | Video Editor &amp; Creative Storyteller</title>
+    <meta name="description"
+        content="Portfolio of Habiba Hisham, a video editor and creative storyteller from Giza, Egypt. Social media videos, event recaps and brand content for NUICPC, E-Club and IECC.">
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;600&family=Space+Mono:wght@400;700&family=Parisienne&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/jpeg" href="./Images/Habiba.jpeg">
+    <link rel="stylesheet" href="player.css">
+    <link rel="stylesheet" href="sections.css">
+    <link rel="icon" type="image/jpeg" href="./Image/Habiba.jpeg">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
+
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>HABIBA<br>Hisham</h1>
-            <div class="hero-subtitle">Video Editor & Creative Storyteller</div>
-            <div class="hero-location">GIZA,6TH OF OCTOBER, EGYPT</div>
+
+    <!-- Top bar (editor-style toolbar) -->
+    <header class="topbar" id="topbar">
+        <a href="#top" class="brand" id="brand-link" aria-label="Back to top">
+            <svg viewBox="0 0 24 24" class="brand-icon" aria-hidden="true">
+                <polygon points="6,4 20,12 6,20" fill="currentColor" />
+            </svg>
+            <span>HH<em>.cut</em></span>
+        </a>
+        <nav class="topnav" aria-label="Main navigation">
+            <a href="#work" id="nav-work" data-sec="work">Work</a>
+            <a href="#about" id="nav-about" data-sec="about">About</a>
+            <a href="#services" id="nav-services" data-sec="services">Services</a>
+            <a href="#experience" id="nav-experience" data-sec="experience">Experience</a>
+            <a href="#skills" id="nav-skills" data-sec="skills">Skills</a>
+            <a href="#contact" id="nav-contact" data-sec="contact">Contact</a>
+        </nav>
+        <div class="top-rec" aria-hidden="true"><i class="rec-dot"></i><span id="topTimecode">00:00:00:00</span></div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-vignette" aria-hidden="true"></div>
+        <div class="hero-spot" id="heroSpot" aria-hidden="true"></div>
+
+        <!-- Viewfinder HUD -->
+        <div class="viewfinder" aria-hidden="true">
+            <span class="vf-corner tl"></span><span class="vf-corner tr"></span>
+            <span class="vf-corner bl"></span><span class="vf-corner br"></span>
+            <div class="vf-crosshair"></div>
+            <div class="vf-top-left"><i class="rec-dot"></i> REC <span id="heroTimecode">00:00:00:00</span></div>
+            <div class="vf-top-right"><span>4K</span><span>24 FPS</span><span>ISO 800</span><span
+                    class="vf-battery"><b></b><b></b><b></b></span></div>
+            <div class="vf-bottom-left">SCENE 01 &middot; TAKE 01</div>
+            <div class="vf-bottom-right">GIZA &middot; EGYPT</div>
         </div>
-        <div class="scroll-indicator"></div>
+
+        <!-- Film reels -->
+        <svg class="reel reel-a" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="3" />
+            <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="1"
+                stroke-dasharray="3 6" />
+            <g fill="none" stroke="currentColor" stroke-width="3">
+                <circle cx="100" cy="46" r="20" />
+                <circle cx="100" cy="46" r="20" transform="rotate(60 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(120 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(180 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(240 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(300 100 100)" />
+            </g>
+            <circle cx="100" cy="100" r="12" fill="currentColor" />
+        </svg>
+        <svg class="reel reel-b" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="3" />
+            <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="1"
+                stroke-dasharray="3 6" />
+            <g fill="none" stroke="currentColor" stroke-width="3">
+                <circle cx="100" cy="46" r="20" />
+                <circle cx="100" cy="46" r="20" transform="rotate(60 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(120 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(180 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(240 100 100)" />
+                <circle cx="100" cy="46" r="20" transform="rotate(300 100 100)" />
+            </g>
+            <circle cx="100" cy="100" r="12" fill="currentColor" />
+        </svg>
+
+        <div class="hero-content">
+            <div class="hero-kicker">&mdash; A Showreel by &mdash;</div>
+
+            <h1 class="sr-only">Habiba Hisham</h1>
+            <!-- Handwritten signature (drawn stroke by stroke with JS + CSS) -->
+            <svg class="signature" id="sig" viewBox="0 0 1400 380" role="img"
+                aria-label="Habiba Hisham, written by hand">
+                <defs>
+                    <linearGradient id="goldGrad" gradientUnits="userSpaceOnUse" x1="100" y1="0" x2="1300" y2="380">
+                        <stop offset="0" stop-color="#fff6dc" />
+                        <stop offset="0.5" stop-color="#e8c766" />
+                        <stop offset="1" stop-color="#d4af37" />
+                    </linearGradient>
+                    <filter id="inkGlow" x="-10%" y="-20%" width="120%" height="140%">
+                        <feGaussianBlur stdDeviation="6" result="b" />
+                        <feMerge>
+                            <feMergeNode in="b" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <g filter="url(#inkGlow)">
+                    <text id="sigBase" x="700" y="250" text-anchor="middle">Habiba Hisham</text>
+                    <g id="sigLetters"></g>
+                    <path id="sigSwash" class="sig-swash" pathLength="1"
+                        d="M180 310 C 420 280, 700 340, 1000 300 S 1240 290, 1240 290" />
+                    <path class="sig-swash sig-swash-2" pathLength="1" d="M420 336 C 640 318, 860 352, 1040 330" />
+                </g>
+                <g class="sparkle" transform="translate(1262 92)">
+                    <path d="M0 -26 L5 -5 L26 0 L5 5 L0 26 L-5 5 L-26 0 L-5 -5 Z" fill="#fff6dc" />
+                </g>
+                <g class="sparkle sparkle-2" transform="translate(150 70)">
+                    <path d="M0 -14 L3 -3 L14 0 L3 3 L0 14 L-3 3 L-14 0 L-3 -3 Z" fill="#e8c766" />
+                </g>
+            </svg>
+
+            <div class="hero-subtitle">Video Editor &amp; Creative Storyteller</div>
+            <div class="hero-chips">
+                <span>Color Grading</span><span>Sound Design</span><span>Motion &amp;
+                    VFX</span><span>Storytelling</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#work" class="btn btn-primary" id="cta-watch"><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <polygon points="6,4 20,12 6,20" fill="currentColor" />
+                    </svg><span>Watch the Reel</span></a>
+                <a href="#contact" class="btn btn-ghost" id="cta-contact"><span>Let's Work Together</span></a>
+            </div>
+            <div class="hero-location">GIZA, 6TH OF OCTOBER, EGYPT</div>
+        </div>
+
+        <div class="waveform" id="waveform" aria-hidden="true"></div>
+        <div class="scroll-indicator" aria-hidden="true"></div>
     </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Color Grading</span><i>&#9654;</i><span>Sound Design</span><i>&#9654;</i><span>Visual
+                Effects</span><i>&#9654;</i><span>Storytelling &amp; Pacing</span><i>&#9654;</i><span>Premiere
+                Pro</span><i>&#9654;</i><span>After Effects</span><i>&#9654;</i><span>CapCut</span><i>&#9654;</i>
+            <span>Color Grading</span><i>&#9654;</i><span>Sound Design</span><i>&#9654;</i><span>Visual
+                Effects</span><i>&#9654;</i><span>Storytelling &amp; Pacing</span><i>&#9654;</i><span>Premiere
+                Pro</span><i>&#9654;</i><span>After Effects</span><i>&#9654;</i><span>CapCut</span><i>&#9654;</i>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-strip reveal">
+        <div class="stat"><b data-count="16">0</b><span>Videos Edited</span></div>
+        <div class="stat"><b data-count="3">0</b><span>Teams &amp; Clubs</span></div>
+        <div class="stat"><b data-count="2">0</b><span>Formats &middot; 9:16 &amp; 16:9</span></div>
+        <div class="stat"><b data-count="1">0</b><span>Story at a Time</span></div>
+    </div>
 
     <!-- Video Showcase Section -->
     <section id="work">
-        <h2 class="section-title">Vertical Videos</h2>
-        <div class="video-intro">
-            <p>A showcase of my video editing projects for social media, event coverage, and creative storytelling. Each piece demonstrates my ability to craft engaging narratives that connect with audiences.</p>
+        <header class="sec-head reveal">
+            <span class="seq">SEQ 01</span>
+            <h2 class="section-title">Vertical Videos</h2>
+        </header>
+        <div class="video-intro reveal">
+            <p>A showcase of my video editing projects for social media, event coverage, and creative storytelling. Each
+                piece demonstrates my ability to craft engaging narratives that connect with audiences.</p>
         </div>
-        <!-- section for portrait videos 
-        <h2 class="section-title">Portrait Videos</h2>
-         -->
-        <div class="videos-grid">
+
+        <div class="filters reveal" role="tablist" aria-label="Filter videos by client">
+            <button class="chip active" data-filter="all" id="filter-all">All</button>
+            <button class="chip" data-filter="NUICPC" id="filter-nuicpc">NUICPC</button>
+            <button class="chip" data-filter="E-Club" id="filter-eclub">E-Club</button>
+            <button class="chip" data-filter="IECC" id="filter-iecc">IECC</button>
+            <span class="clip-count" id="clipCount" aria-live="polite">15 clips</span>
+        </div>
+
+        <div class="videos-grid" id="verticalGrid">
             <!-- Video 1 -->
-            <div class="video-card">
-                <video controls preload="metadata" poster="./Cover/Portrait/1.png">
-                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2010.mp4"
-                    type="video/mp4">
+            <div class="video-card reveal" data-tag="NUICPC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_01.MP4</span><span
+                        class="clip-tag">NUICPC</span></div>
+                <video controls preload="metadata" poster="Cover/Portrait/10.png">
+                    <source
+                        src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2010.mp4"
+                        type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
                     <h3 class="video-title">NUICPC Introduction</h3>
                     <h4>Date: 25/10/2025</h4>
-                    <p class="video-description">NUICPC introduction video showcasing the NUICPC community, their mission, and journey throughout the season.</p>
+                    <p class="video-description">NUICPC introduction video showcasing the NUICPC community, their
+                        mission, and journey throughout the season.</p>
                 </div>
             </div>
 
             <!-- Video 2 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="NUICPC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_02.MP4</span><span
+                        class="clip-tag">NUICPC</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/2.png">
-                    <source src="Videos/Portrait/Project 2.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%202.mp4." type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
                     <h3 class="video-title">NUICPC Introduction Community</h3>
                     <h4>Date: 08/11/2025</h4>
-                    <p class="video-description">NUICPC Showing the vibrant community of NUICPC and their behind the scenes moments.</p>
+                    <p class="video-description">NUICPC Showing the vibrant community of NUICPC and their behind the
+                        scenes moments.</p>
                 </div>
             </div>
 
             <!-- Video 3 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="NUICPC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_03.MP4</span><span
+                        class="clip-tag">NUICPC</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/3.png">
-                    <source src="Videos/Portrait/Project 3.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%203.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -72,9 +233,11 @@
             </div>
 
             <!-- Video 4 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="NUICPC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_04.MP4</span><span
+                        class="clip-tag">NUICPC</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/4.png">
-                    <source src="Videos/Portrait/Project 4.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%204.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -85,9 +248,11 @@
             </div>
 
             <!-- Video 5 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="NUICPC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_05.MP4</span><span
+                        class="clip-tag">NUICPC</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/5.png">
-                    <source src="Videos/Portrait/Project 5.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%205.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -98,9 +263,11 @@
             </div>
 
             <!-- Video 6 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="E-Club">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_06.MP4</span><span
+                        class="clip-tag">E-Club</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/8.png">
-                    <source src="Videos/Portrait/Project 6.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%206.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -111,9 +278,11 @@
             </div>
 
             <!-- Video 7 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="E-Club">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_07.MP4</span><span
+                        class="clip-tag">E-Club</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/10.png">
-                    <source src="Videos/Portrait/Project 7.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%207.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -124,9 +293,11 @@
             </div>
 
             <!-- Video 8 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="E-Club">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_08.MP4</span><span
+                        class="clip-tag">E-Club</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/6.png">
-                    <source src="Videos/Portrait/Project 8.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%208.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -137,9 +308,11 @@
             </div>
 
             <!-- Video 9 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="IECC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_09.MP4</span><span
+                        class="clip-tag">IECC</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/7.png">
-                    <source src="Videos/Portrait/Project 9.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%209.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -150,9 +323,11 @@
             </div>
 
             <!-- Video 10 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="IECC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_10.MP4</span><span
+                        class="clip-tag">IECC</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/13.png">
-                    <source src="Videos/Portrait/Project 10.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2010.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -163,9 +338,11 @@
             </div>
 
             <!-- Video 11 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="E-Club">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_11.MP4</span><span
+                        class="clip-tag">E-Club</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/12.png">
-                    <source src="Videos/Portrait/Project 11.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2011.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -176,9 +353,11 @@
             </div>
 
             <!-- Video 12 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="E-Club">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_12.MP4</span><span
+                        class="clip-tag">E-Club</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/12.png">
-                    <source src="Videos/Portrait/Project 12.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2012.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -189,9 +368,11 @@
             </div>
 
             <!-- Video 13 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="E-Club">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_13.MP4</span><span
+                        class="clip-tag">E-Club</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/11.png">
-                    <source src="Videos/Portrait/Project 13.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2013.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -202,9 +383,11 @@
             </div>
 
             <!-- Video 14 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="E-Club">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_14.MP4</span><span
+                        class="clip-tag">E-Club</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/11.png">
-                    <source src="Videos/Portrait/Project 14.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2014.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -215,9 +398,11 @@
             </div>
 
             <!-- Video 15 -->
-            <div class="video-card">
+            <div class="video-card reveal" data-tag="IECC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">CLIP_15.MP4</span><span
+                        class="clip-tag">IECC</span></div>
                 <video controls preload="metadata" poster="./Cover/Portrait/13.png">
-                    <source src="Videos/Portrait/Project 15.mp4" type="video/mp4">
+                    <source src="https://zovahifyznzzfdhixxcf.supabase.co/storage/v1/object/public/Videos/Project%2015.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-info">
@@ -226,15 +411,19 @@
                     <p class="video-description">IECC GIG Skill Boost.</p>
                 </div>
             </div>
-            
         </div>
     </section>
 
     <section id="horizontal-work" class="section-horizontal">
-        <h2 class="section-title">Horizontal Videos</h2>
+        <header class="sec-head reveal">
+            <span class="seq">SEQ 02</span>
+            <h2 class="section-title">Horizontal Videos</h2>
+        </header>
         <div class="videos-grid horizontal">
             <!-- Video 1 -->
-            <div class="video-card horizontal">
+            <div class="video-card horizontal reveal" data-tag="IECC">
+                <div class="clip-bar"><i class="clip-dot"></i><span class="clip-name">WIDE_01.MP4</span><span
+                        class="clip-tag">16:9</span></div>
                 <video controls preload="metadata" poster="./Cover/Landscape/14.png">
                     <source src="Videos/Landscape/Brunch and Richback.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -250,78 +439,197 @@
 
     <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
+        <header class="sec-head reveal">
+            <span class="seq">SEQ 03</span>
+            <h2 class="section-title">About Me</h2>
+        </header>
         <div class="about-grid">
-            <div class="about-text">
-                <p>I'm a <span class="highlight">video editor and creative</span> with a passion for transforming raw footage into compelling visual narratives. Currently studying Computer Science at Nile University, I blend technical expertise with artistic vision.</p>
-                <p>My journey in video editing and photography began through my involvement with the <span class="highlight">ICPCNU Media Committee</span>, where I enhanced the club's image through strategic video content creation and editing.</p>
-                <p>Since August 2026, I've been working as a <span class="highlight">Videography Intern at IECC</span>, where I continue to grow my skills by creating video content as part of the media team.</p>
-                <p>I specialize in creating engaging content that tells stories, builds brands, and connects with audiences on an emotional level.</p>
+            <div class="about-text reveal">
+                <p>I'm a <span class="highlight">video editor and creative</span> with a passion for transforming raw
+                    footage into compelling visual narratives. Currently studying Computer Science at Nile University, I
+                    blend technical expertise with artistic vision.</p>
+                <p>My journey in video editing and photography began through my involvement with the <span
+                        class="highlight">ICPCNU Media Committee</span>, where I enhanced the club's image through
+                    strategic video content creation and editing.</p>
+                <p>Since August 2026, I've been working as a <span class="highlight">Videography Intern at IECC</span>,
+                    where I continue to grow my skills by creating video content as part of the media team.</p>
+                <p>I specialize in creating engaging content that tells stories, builds brands, and connects with
+                    audiences on an emotional level.</p>
             </div>
-            <div class="about-image-section">
-                <img src="./Images/Habiba.jpeg" alt="Habiba Mohamed" class="profile-photo">
+            <div class="about-image-section reveal">
+                <figure class="frame">
+                    <span class="vf-corner tl"></span><span class="vf-corner tr"></span>
+                    <span class="vf-corner bl"></span><span class="vf-corner br"></span>
+                    <div class="frame-hud"><i class="rec-dot"></i> REC</div>
+                    <img src="./Image/Habiba.jpeg" onerror="this.onerror=null;this.src='./Images/Habiba.jpeg'"
+                        alt="Habiba Hisham" class="profile-photo">
+                    <figcaption class="lower-third">
+                        <b>Habiba Hisham</b>
+                        <span>Video Editor</span>
+                    </figcaption>
+                </figure>
             </div>
+        </div>
+
+        <div class="facts">
+            <div class="fact reveal"><span class="fact-label">Studying</span><b>Computer Science</b><span>Nile
+                    University</span></div>
+            <div class="fact reveal"><span class="fact-label">Now</span><b>Videography Intern</b><span>IECC &middot;
+                    since Aug 2026</span></div>
+            <div class="fact reveal"><span class="fact-label">Led</span><b>Head of Media</b><span>E-Club, Nile
+                    University</span></div>
+            <div class="fact reveal"><span class="fact-label">Based in</span><b>Giza, Egypt</b><span>6th of
+                    October</span></div>
+        </div>
+    </section>
+
+    <!-- Services + Workflow -->
+    <section id="services">
+        <header class="sec-head reveal">
+            <span class="seq">SEQ 04</span>
+            <h2 class="section-title">What I Do</h2>
+        </header>
+
+        <div class="services-grid">
+            <article class="service reveal">
+                <span class="service-no">01</span>
+                <svg class="service-ico" viewBox="0 0 48 48" aria-hidden="true">
+                    <rect x="14" y="4" width="20" height="40" rx="4" fill="none" stroke="currentColor"
+                        stroke-width="2.5" />
+                    <polygon points="21,19 21,29 29,24" fill="currentColor" />
+                </svg>
+                <h3>Social Media Edits</h3>
+                <p>Vertical reels and short-form videos built to hold attention: tight pacing, clean sound and a clear
+                    message.</p>
+            </article>
+            <article class="service reveal">
+                <span class="service-no">02</span>
+                <svg class="service-ico" viewBox="0 0 48 48" aria-hidden="true">
+                    <rect x="6" y="10" width="36" height="30" rx="4" fill="none" stroke="currentColor"
+                        stroke-width="2.5" />
+                    <line x1="6" y1="20" x2="42" y2="20" stroke="currentColor" stroke-width="2.5" />
+                    <line x1="15" y1="4" x2="15" y2="14" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <line x1="33" y1="4" x2="33" y2="14" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" />
+                </svg>
+                <h3>Event Recaps</h3>
+                <p>Energetic recaps of competitions, sessions and festivals that capture the moments people want to
+                    relive.</p>
+            </article>
+            <article class="service reveal">
+                <span class="service-no">03</span>
+                <svg class="service-ico" viewBox="0 0 48 48" aria-hidden="true">
+                    <path d="M8 20 L30 10 V38 L8 28 Z" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linejoin="round" />
+                    <path d="M14 29 L17 40 H23 L21 33" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linejoin="round" />
+                    <path d="M36 18 Q41 24 36 30" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" />
+                </svg>
+                <h3>Announcements &amp; Promos</h3>
+                <p>Launch and announcement videos that give clubs and teams a consistent, recognisable visual identity.
+                </p>
+            </article>
+            <article class="service reveal">
+                <span class="service-no">04</span>
+                <svg class="service-ico" viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="24" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2.5" />
+                    <path d="M8 24 H17 M31 24 H40 M24 8 V17 M24 31 V40" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-dasharray="2 5" />
+                </svg>
+                <h3>Media Team Direction</h3>
+                <p>Planning and directing content from idea to publish, and keeping a media team's output organised.</p>
+            </article>
+        </div>
+
+        <div class="workflow reveal">
+            <h3 class="workflow-title">My Workflow</h3>
+            <ol class="pipeline">
+                <li><span class="pl-node">01</span><b>Ingest</b><small>Organise &amp; sync footage</small></li>
+                <li><span class="pl-node">02</span><b>Rough Cut</b><small>Find the story</small></li>
+                <li><span class="pl-node">03</span><b>Fine Cut</b><small>Pacing &amp; rhythm</small></li>
+                <li><span class="pl-node">04</span><b>Color &amp; Sound</b><small>Grade, mix, polish</small></li>
+                <li><span class="pl-node">05</span><b>Export</b><small>Deliver for every platform</small></li>
+            </ol>
         </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
-        <h2 class="section-title">Experience</h2>
+        <header class="sec-head reveal">
+            <span class="seq">SEQ 05</span>
+            <h2 class="section-title">Experience</h2>
+        </header>
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">April 2026 – Oct 22,2026</div>
-                <div class="timeline-title">Head of Media | E-Club, Nile University</div>
-                <div class="timeline-description">
-                    Leading the media team at E-Club, overseeing all video production and content strategy. Directing creative video projects, managing media operations, and building the club's visual brand presence across social media platforms.
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Nov 2025 – Jan 2025</div>
-                <div class="timeline-title">Media Committee Member | ICPCNU</div>
-                <div class="timeline-description">
-                    Enhanced the club's image and brand presence through professional video editing and content creation. Produced engaging video content for programming competitions and university events, showcasing strong storytelling and technical editing skills.
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Aug 2026 – Untill Now</div>
+            <div class="timeline-item reveal">
+                <div class="timeline-date">Aug 2026 – Untill Now <span class="now-badge">Now</span> <span
+                        class="tl-chip">Internship</span></div>
                 <div class="timeline-title">IECC Video Graphy INTERN | AT NILE UNIVERSITY</div>
                 <div class="timeline-description">
-                    Managed technical systems and collaborated with teams for event logistics during NUCPA, a major programming competition. Supported media documentation and content creation efforts.
+                    Managed technical systems and collaborated with teams for event logistics during NUCPA, a major
+                    programming competition. Supported media documentation and content creation efforts.
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-date">April 2026 – Oct 22,2026 <span class="tl-chip">Leadership</span></div>
+                <div class="timeline-title">Head of Media | E-Club, Nile University</div>
+                <div class="timeline-description">
+                    Leading the media team at E-Club, overseeing all video production and content strategy. Directing
+                    creative video projects, managing media operations, and building the club's visual brand presence
+                    across social media platforms.
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-date">Nov 2025 – Jan 2025 <span class="tl-chip">Video Editing</span></div>
+                <div class="timeline-title">Media Committee Member | ICPCNU</div>
+                <div class="timeline-description">
+                    Enhanced the club's image and brand presence through professional video editing and content
+                    creation. Produced engaging video content for programming competitions and university events,
+                    showcasing strong storytelling and technical editing skills.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section (laid out as editing tracks) -->
     <section id="skills">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Video Editing</h3>
-                <ul class="skill-list">
-                    <li>Color Grading & Correction</li>
-                    <li>Sound Design</li>
-                    <li>Visual Effects</li>
-                    <li>Storytelling & Pacing</li>
+        <header class="sec-head reveal">
+            <span class="seq">SEQ 06</span>
+            <h2 class="section-title">Skills &amp; Expertise</h2>
+        </header>
+        <div class="tracks reveal">
+            <div class="tracks-ruler" aria-hidden="true"></div>
+            <div class="playhead" aria-hidden="true"></div>
+
+            <div class="track">
+                <div class="track-label"><b>V1</b><span>Video Editing</span></div>
+                <ul class="track-lane">
+                    <li class="clipblock gold" style="flex:1.6">Color Grading &amp; Correction</li>
+                    <li class="clipblock gold" style="flex:1">Sound Design</li>
+                    <li class="clipblock gold" style="flex:1.1">Visual Effects</li>
+                    <li class="clipblock gold" style="flex:1.5">Storytelling &amp; Pacing</li>
                 </ul>
             </div>
-            <div class="skill-category">
-                <h3>Creative Suite</h3>
-                <ul class="skill-list">
-                    <li>Adobe Premiere Pro</li>
-                    <li>CapCut</li>
-                    <li>After Effects</li>
-                    <li>Illustrator beginners</li>
+            <div class="track">
+                <div class="track-label"><b>V2</b><span>Creative Suite</span></div>
+                <ul class="track-lane">
+                    <li class="clipblock red" style="flex:1.5">Adobe Premiere Pro</li>
+                    <li class="clipblock red" style="flex:0.9">CapCut</li>
+                    <li class="clipblock red" style="flex:1.2">After Effects</li>
+                    <li class="clipblock red" style="flex:1.4">Illustrator beginners</li>
                 </ul>
             </div>
-            <div class="skill-category">
-                <h3>Soft Skills</h3>
-                <ul class="skill-list">
-                    <li>Creative Storytelling</li>
-                    <li>Team Collaboration</li>
-                    <li>Project Management</li>
-                    <li>Communication</li>
-                    <li>Time Management</li>
+            <div class="track">
+                <div class="track-label"><b>A1</b><span>Soft Skills</span></div>
+                <ul class="track-lane">
+                    <li class="clipblock green" style="flex:1.4">Creative Storytelling</li>
+                    <li class="clipblock green" style="flex:1.3">Team Collaboration</li>
+                    <li class="clipblock green" style="flex:1.3">Project Management</li>
+                    <li class="clipblock green" style="flex:1.1">Communication</li>
+                    <li class="clipblock green" style="flex:1.2">Time Management</li>
                 </ul>
             </div>
         </div>
@@ -329,32 +637,198 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">
-                        <a href="https://outlook.office.com/mail/deeplink/compose?to=h.hisham2455@nu.edu.eg&subject=Portfolio%20Inquiry"
-                        target="_blank" rel="noopener">
-                            h.hisham2455@nu.edu.eg
-                        </a>
+        <header class="sec-head reveal">
+            <span class="seq">SEQ 07</span>
+            <h2 class="section-title">Let's Work Together</h2>
+        </header>
+        <div class="contact-layout">
+            <div class="clapper reveal" aria-hidden="true">
+                <svg viewBox="0 0 260 240">
+                    <g class="clap-arm">
+                        <rect x="18" y="30" width="224" height="40" rx="4" fill="#0a0a0a" stroke="#d4af37"
+                            stroke-width="4" />
+                        <g fill="#d4af37">
+                            <polygon points="40,30 70,30 52,70 22,70" />
+                            <polygon points="100,30 130,30 112,70 82,70" />
+                            <polygon points="160,30 190,30 172,70 142,70" />
+                            <polygon points="220,30 242,30 242,40 232,70 202,70" />
+                        </g>
+                    </g>
+                    <rect x="18" y="76" width="224" height="140" rx="4" fill="#111" stroke="#d4af37" stroke-width="4" />
+                    <g stroke="#d4af37" stroke-width="2" opacity=".6">
+                        <line x1="18" y1="112" x2="242" y2="112" />
+                        <line x1="18" y1="148" x2="242" y2="148" />
+                        <line x1="18" y1="182" x2="242" y2="182" />
+                        <line x1="130" y1="112" x2="130" y2="182" />
+                    </g>
+                    <g fill="#d4af37" font-family="Space Mono, monospace" font-size="11">
+                        <text x="28" y="98">PROD. PORTFOLIO</text>
+                        <text x="28" y="132">SCENE 06</text><text x="140" y="132">TAKE 01</text>
+                        <text x="28" y="166">DIR. HABIBA</text><text x="140" y="166">24 FPS</text>
+                        <text x="28" y="204">ACTION!</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item reveal">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="https://outlook.office.com/mail/deeplink/compose?to=h.hisham2455@nu.edu.eg&subject=Portfolio%20Inquiry"
+                                target="_blank" rel="noopener">
+                                h.hisham2455@nu.edu.eg
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">01550612574</div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Giza, Egypt</div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value"><a
+                                href="https://www.linkedin.com/in/habiba-hisham-mohamed?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank" rel="noopener">Connect with me</a></div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-label">Phone</div>
-                    <div class="contact-value">01550612574</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-label">Location</div>
-                    <div class="contact-value">Giza, Egypt</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-label">LinkedIn</div>
-                    <div class="contact-value"><a href="https://www.linkedin.com/in/habiba-hisham-mohamed?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Connect with me</a></div>
+                <div class="contact-cta reveal">
+                    <h3>Have a project in mind?</h3>
+                    <p>Send me the footage and the idea &mdash; I'll shape it into a story.</p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" id="cta-email"
+                            href="https://outlook.office.com/mail/deeplink/compose?to=h.hisham2455@nu.edu.eg&subject=Portfolio%20Inquiry"
+                            target="_blank" rel="noopener"><span>Send an Email</span></a>
+                        <button class="btn btn-ghost" id="copyEmail" type="button"
+                            data-copy="h.hisham2455@nu.edu.eg"><span>Copy Email</span></button>
+                        <a class="btn btn-ghost" id="cta-linkedin"
+                            href="https://www.linkedin.com/in/habiba-hisham-mohamed?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank" rel="noopener"><span>LinkedIn</span></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- Credits footer -->
+    <footer class="credits">
+        <div class="credits-wrap">
+            <div class="wrap-title">That's a Wrap</div>
+            <p class="credits-line">Edited by <b>Habiba Hisham</b></p>
+            <p class="credits-line small">Giza &middot; Egypt &middot; Nile University</p>
+            <a href="#top" class="btn btn-ghost" id="back-top"><span>&#9654; Play Again</span></a>
+        </div>
+    </footer>
+
+    <!-- Scroll timeline (fixed) -->
+    <div class="scrubber" id="scrubber" aria-hidden="true">
+        <span class="scrub-time" id="scrubTime">00:00:00:00</span>
+        <div class="scrub-track">
+            <div class="scrub-ruler"></div>
+            <div class="scrub-fill" id="scrubFill"></div>
+            <div class="scrub-head" id="scrubHead"><i></i></div>
+        </div>
+        <span class="scrub-end">24 FPS</span>
+    </div>
+
+    <!-- Theater video player -->
+    <div class="theater" id="theater" hidden role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="theater-backdrop" data-close></div>
+        <div class="theater-panel">
+            <button class="theater-close" id="theaterClose" type="button" aria-label="Close player" data-close>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="theater-main">
+                <div class="theater-stage paused" id="theaterStage">
+                    <video id="theaterVideo" playsinline preload="metadata"></video>
+                    <div class="player-hud" aria-hidden="true"><i class="rec-dot"></i><span
+                            id="hudTime">00:00:00:00</span></div>
+                    <button class="big-play" id="bigPlay" type="button" aria-label="Play video">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <polygon points="7,4 20,12 7,20" />
+                        </svg>
+                    </button>
+                    <div class="player-msg" id="playerMsg" hidden>
+                        <b>Clip unavailable</b>
+                        <span>This video couldn't be loaded right now. Please try again later.</span>
+                    </div>
+                    <div class="player-bar" id="playerBar">
+                        <div class="pb" id="pb" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0"
+                            aria-valuemax="100" aria-valuenow="0">
+                            <div class="pb-buf" id="pbBuf"></div>
+                            <div class="pb-fill" id="pbFill"></div>
+                            <div class="pb-knob" id="pbKnob"></div>
+                            <span class="pb-tip" id="pbTip">00:00</span>
+                        </div>
+                        <div class="pc-row">
+                            <button class="pc-btn" id="pcPlay" type="button" aria-label="Play or pause">
+                                <svg class="ico-play" viewBox="0 0 24 24">
+                                    <polygon points="7,4 20,12 7,20" />
+                                </svg>
+                                <svg class="ico-pause" viewBox="0 0 24 24">
+                                    <rect x="6" y="4" width="4" height="16" />
+                                    <rect x="14" y="4" width="4" height="16" />
+                                </svg>
+                            </button>
+                            <span class="pc-time" id="pcTime">00:00 / 00:00</span>
+                            <span class="pc-spacer"></span>
+                            <button class="pc-btn pc-text" id="pcSpeed" type="button"
+                                aria-label="Playback speed">1&times;</button>
+                            <button class="pc-btn" id="pcMute" type="button" aria-label="Mute or unmute">
+                                <svg class="ico-vol" viewBox="0 0 24 24">
+                                    <path d="M4 9 H8 L13 5 V19 L8 15 H4 Z" />
+                                    <path d="M16 8 Q19 12 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <svg class="ico-mute" viewBox="0 0 24 24">
+                                    <path d="M4 9 H8 L13 5 V19 L8 15 H4 Z" />
+                                    <path d="M16 9 L21 15 M21 9 L16 15" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                            <button class="pc-btn" id="pcFs" type="button" aria-label="Fullscreen">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M4 9 V4 H9 M15 4 H20 V9 M20 15 V20 H15 M9 20 H4 V15" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p class="theater-keys" aria-hidden="true"><kbd>Space</kbd> play &nbsp;
+                    <kbd>&larr;</kbd><kbd>&rarr;</kbd> seek &nbsp; <kbd>[</kbd><kbd>]</kbd> prev / next &nbsp;
+                    <kbd>M</kbd> mute &nbsp; <kbd>F</kbd> fullscreen &nbsp; <kbd>Esc</kbd> close</p>
+            </div>
+
+            <aside class="theater-info">
+                <div class="ti-top">
+                    <span class="ti-seq" id="tSeq">CLIP 01 / 15</span>
+                    <span class="clip-tag" id="tTag">NUICPC</span>
+                </div>
+                <h3 class="ti-title" id="tTitle">Title</h3>
+                <p class="ti-date" id="tDate">Date</p>
+                <p class="ti-desc" id="tDesc">Description</p>
+                <div class="ti-nav">
+                    <button class="btn btn-ghost" id="tPrev" type="button"><span>&larr; Prev</span></button>
+                    <button class="btn btn-primary" id="tNext" type="button"><span>Next &rarr;</span></button>
+                </div>
+                <div class="upnext">
+                    <h4>Up Next</h4>
+                    <div class="upnext-list" id="upNext"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="player.js"></script>
+</body>
+
+</html>
