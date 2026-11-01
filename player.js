@@ -24,12 +24,15 @@
         var v = card.querySelector('video');
         var src = card.querySelector('source');
         var tag = card.querySelector('.clip-tag');
+
         return {
             title: (card.querySelector('.video-title') || {}).textContent || '',
             date: ((card.querySelector('.video-info h4') || {}).textContent || '').replace(/^Date:\s*/i, ''),
             desc: (card.querySelector('.video-description') || {}).textContent || '',
             tag: tag ? tag.textContent : '',
-            src: src ? src.getAttribute('src') : (v ? v.getAttribute('src') : ''),
+            src: v && v.getAttribute('data-video')
+                ? v.getAttribute('data-video')
+                : (src ? src.getAttribute('src') : (v ? v.getAttribute('src') : '')),
             poster: v ? v.getAttribute('poster') : '',
             wide: card.classList.contains('horizontal')
         };
@@ -101,6 +104,8 @@
         var msg = $('playerMsg');
         var list = [], index = 0, lastFocus = null, idleTimer = null, dragging = false;
         var speeds = [1, 1.5, 2, 0.5], speedIdx = 0;
+        var vimeoFrame = null;
+        var isVimeo = false;
 
         window.openTheater = function (card) {
             list = cards.filter(function (c) { return !c.classList.contains('hide') && c.querySelector('video'); });
@@ -116,6 +121,20 @@
             video.pause();
             video.removeAttribute('src');
             video.load();
+
+            if (vimeoFrame) {
+                vimeoFrame.src = 'about:blank';
+                vimeoFrame.remove();
+                vimeoFrame = null;
+            }
+
+            isVimeo = false;
+            video.style.display = '';
+            stage.classList.remove('vimeo');
+
+            $('playerBar').style.display = '';
+            $('bigPlay').style.display = '';
+            document.querySelector('.player-hud').style.display = '';
             theater.hidden = true;
             document.body.classList.remove('no-scroll');
             if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen();
@@ -139,13 +158,53 @@
             setProgress(0, 0);
 
             video.pause();
-            video.poster = d.poster || '';
-            stage.parentNode.style.setProperty('--tbg', d.poster ? 'url("' + d.poster + '")' : 'none');
-            video.src = d.src;
-            video.playbackRate = speeds[speedIdx];
+            video.removeAttribute('src');
             video.load();
-            var p = video.play();
-            if (p && p.catch) p.catch(function () { /* autoplay blocked: user presses play */ });
+
+            if (vimeoFrame) {
+                vimeoFrame.remove();
+                vimeoFrame = null;
+            }
+
+            isVimeo = /player\.vimeo\.com\/video\//i.test(d.src || '');
+
+            video.style.display = isVimeo ? 'none' : '';
+
+            stage.classList.toggle('vimeo', isVimeo);
+
+            if (isVimeo) {
+                vimeoFrame = document.createElement('iframe');
+
+                vimeoFrame.src = d.src +
+                    (d.src.indexOf('?') === -1 ? '?' : '&') +
+                    'autoplay=1&title=0&byline=0&portrait=0';
+
+                vimeoFrame.title = d.title;
+                vimeoFrame.allow = 'autoplay; fullscreen; picture-in-picture';
+                vimeoFrame.allowFullscreen = true;
+                vimeoFrame.setAttribute('frameborder', '0');
+
+                stage.insertBefore(vimeoFrame, stage.firstChild);
+
+                // Vimeo uses its own player controls.
+                $('playerBar').style.display = 'none';
+                $('bigPlay').style.display = 'none';
+                document.querySelector('.player-hud').style.display = 'none';
+
+            } else {
+                $('playerBar').style.display = '';
+                $('bigPlay').style.display = '';
+                document.querySelector('.player-hud').style.display = '';
+
+                video.src = d.src;
+                video.playbackRate = speeds[speedIdx];
+                video.load();
+
+                var p = video.play();
+                if (p && p.catch) {
+                    p.catch(function () {});
+                }
+            }
 
             $('tSeq').textContent = 'CLIP ' + pad(index + 1) + ' / ' + pad(list.length);
             $('tTag').textContent = d.tag;

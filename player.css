@@ -345,3 +345,11 @@ body.no-scroll { overflow: hidden; }
     .theater-info { border-left: 0; border-top: 1px solid var(--line); overflow: visible; }
     .ti-title { font-size: 1.8rem; }
 }
+.theater-stage iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #000;
+}
